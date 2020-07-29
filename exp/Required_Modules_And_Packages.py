@@ -4,13 +4,13 @@ from fastai import *
 from fastai.vision import *
 from fastai.text import *
 from fastai.callbacks import *
-from Precision_Module import Precision1
+from exp.external.Precision_Module import Precision1
 
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import pickle
-import aidrtokenize
+import exp.external.aidrtokenize as aidrtokenize
 from sklearn.metrics import classification_report
 
 from pathlib import Path
