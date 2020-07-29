@@ -413,7 +413,7 @@ def read_stop_words(file_name):
     return stop_words;
 
 
-stop_words_file = "stop_words_english.txt"
+stop_words_file = "exp/external/stop_words_english.txt"
 stop_words = read_stop_words(stop_words_file)
 
 
