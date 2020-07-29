@@ -1,0 +1,1 @@
+Put all the seven events image data folders in this folder
