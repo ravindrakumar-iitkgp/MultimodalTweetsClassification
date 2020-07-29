@@ -12,12 +12,12 @@ def clean_ascii(text):
     return ''.join(i for i in text if ord(i) < 128)
 
 # dictionary of tsv files of all three train,dev, and test split for both task
-tsv_data_files ={'humanitarian_task_tsv_files':('task_humanitarian_text_img_agreed_lab_train.tsv',
-                                                'task_humanitarian_text_img_agreed_lab_dev.tsv',
-                                                'task_humanitarian_text_img_agreed_lab_test.tsv'),
-                'Informativeness_task_tsv_files':('task_informative_text_img_agreed_lab_train.tsv',
-                                                  'task_informative_text_img_agreed_lab_dev.tsv',
-                                                  'task_informative_text_img_agreed_lab_test.tsv')
+tsv_data_files ={'humanitarian_task_tsv_files':('data/task_humanitarian_text_img_agreed_lab_train.tsv',
+                                                'data/task_humanitarian_text_img_agreed_lab_dev.tsv',
+                                                'data/task_humanitarian_text_img_agreed_lab_test.tsv'),
+                'Informativeness_task_tsv_files':('data/task_informative_text_img_agreed_lab_train.tsv',
+                                                  'data/task_informative_text_img_agreed_lab_dev.tsv',
+                                                  'data/task_informative_text_img_agreed_lab_test.tsv')
                 }
 
 #function to get tsv files of all three splits for a particular task
