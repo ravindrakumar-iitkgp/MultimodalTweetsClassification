@@ -1,11 +1,18 @@
+'''
+created on 11/07/2020
+
+@author: Ravindra Kumar
+'''
+
 from exp.Required_Modules_And_Packages import *
 
 #function to untar data and unzip agreed label
-def untar_data_and_unzip_label(data,agreed_label):
-    zf = tarfile.open(data)
-    zf.extractall()
-    zf = zipfile.ZipFile(agreed_label)
-    zf.extractall()
+def untar_data_and_unzip_label(tar_data_file,zip_agreed_label_file):
+    path = Path('/notebooks/MultimodalTweetsClassification')
+    zf = tarfile.open(path/'data'/tar_data_file)
+    zf.extractall(path/'data')
+    zf = zipfile.ZipFile(path/'data'/zip_agreed_label_file)
+    zf.extractall(path/'data')
 
 # function to remove non-ASCII chars from data
 def clean_ascii(text):
@@ -84,7 +91,7 @@ def get_test_text_data(dataframe,path,pad_first=True,pad_idx=1,batch_size=64,pro
 # prepreprocessing and creating image data for classification
 def get_image_data(dataframe,path,image_size=224,batch_size=64):
     tfms = get_transforms()
-    image_data = (ImageList.from_df(dataframe,path,cols='image')
+    image_data = (ImageList.from_df(dataframe,path/'data/CrisisMMD_v2.0',cols='image')
             #Where to find the data? -> from dataframe
             .split_from_df(col='is_valid')
             #How to split in train/valid? -> using is_valid column of dataframe
@@ -100,7 +107,7 @@ def get_image_data(dataframe,path,image_size=224,batch_size=64):
 # prepreprocessing and creating image test data for classification
 def get_test_image_data(dataframe,path,image_size=224,batch_size=64):
     tfms = get_transforms()
-    test_image_data = (ImageList.from_df(dataframe,path,cols='image')
+    test_image_data = (ImageList.from_df(dataframe,path/'data/CrisisMMD_v2.0',cols='image')
             .split_none()
             .label_from_df(cols='label_image')
             .transform(tfms, size=image_size)
