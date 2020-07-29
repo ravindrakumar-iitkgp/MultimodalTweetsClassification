@@ -1,1 +1,1 @@
-All the modules ,which are required for data pre-processoning, handling multimodal image and text data, integration of Transformers with Fastai and building multimodal architecture for training. 
+All the modules ,which are required for data pre-processing, handling multimodal image and text data, integrating Transformers with Fastai, and building multimodal architecture to train the model for tweets classification. 
